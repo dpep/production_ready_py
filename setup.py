@@ -41,11 +41,7 @@ setup(
     long_description_content_type='text/markdown',
     platforms='any',
 
-    packages=[
-        'production_ready',
-    ],
-
-    test_suite = 'setup.discover_tests',
+    packages=['production_ready'],
 
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
