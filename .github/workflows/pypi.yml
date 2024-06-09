@@ -24,8 +24,7 @@ jobs:
         path: dist/
 
 
-  publish-to-pypi:
-    name: Publish to PyPI
+  publish:
     if: startsWith(github.ref, 'refs/tags/')  # only on tag pushes
     needs:
     - build
