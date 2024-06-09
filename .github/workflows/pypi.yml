@@ -14,13 +14,12 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.x"
-
     - name: install pypa/build
       run: python3 -m pip install build --user
     - name: build wheel and source tarball
       run: python3 -m build
     - name: store distribution packages
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: python-package-distributions
         path: dist/
@@ -39,15 +38,9 @@ jobs:
 
     steps:
       - name: download dists
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
-      - name: sign with Sigstore
-        uses: sigstore/gh-action-sigstore-python@v2.1.1
-        with:
-          inputs: >-
-            ./dist/*.tar.gz
-            ./dist/*.whl
       - name: publish
         uses: pypa/gh-action-pypi-publish@release/v1
