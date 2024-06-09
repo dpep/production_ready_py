@@ -25,5 +25,8 @@ Homepage = "https://github.com/dpep/production_ready_py"
 [project.scripts]
 production_ready = "production_ready.cli:main"
 
+[tool.setuptools]
+packages = ["production_ready"]
+
 [tool.setuptools.dynamic]
 version = {attr = "production_ready.__version__"}
