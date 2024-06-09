@@ -19,6 +19,12 @@ requires-python = ">= 3"
 keywords = ["education"]
 dependencies = ["flask"]
 
+[project.optional-dependencies]
+test = [
+  "pytest >= 8.2",
+  "pytest-flask",
+]
+
 [project.urls]
 Homepage = "https://github.com/dpep/production_ready_py"
 
