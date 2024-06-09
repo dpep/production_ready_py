@@ -17,10 +17,13 @@ classifiers = [
 ]
 requires-python = ">= 3"
 keywords = ["education"]
-dependencies = []
+dependencies = ["flask"]
 
 [project.urls]
 Homepage = "https://github.com/dpep/production_ready_py"
+
+[project.scripts]
+production_ready = "production_ready.cli:main"
 
 [tool.setuptools.dynamic]
 version = {attr = "production_ready.__version__"}
